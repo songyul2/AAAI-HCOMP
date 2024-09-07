@@ -7,7 +7,7 @@ The code was tested on Linux. To set up the python environment, first install cm
 
 # Major components
 `human-data/jarstudy4.csv` is the behavorial data. Annotators looked at and annotated various angles for the images we provided them. `utils.read_jarstudy4` parses the relevant columns in it.
-`../blender` contains the code to generate jar images which works in Linux and Windows. The image files are too large to be included.
+`./blender` contains the code to generate jar images which works in Linux and Windows. The image files are too large to be included.
 
 
 `segment-code/segment.py` is the main script that runs the segmentation model on the images, and it saves the output to the directory `density_{subset}`. subset is either `train` or `test`. The directory contains the following files: images with masks and `img_data.csv`.
@@ -46,30 +46,27 @@ If there was an error saying that a file does not exist, creating a directory wi
 The internal output is saved under the `data` directory. `draw.py` generates the plots and saves them in the `plots` directory. It also prints the relative improvement in a format for latex tables.
 
 # Project Structure
-There are 5 folds, and each fold has a corresponding directory in the `data` directory. The `data` directory contains the following subdirectories and files for combining the estimates: 
-
-
-<pre>
-├── uncertain
-│   └── data
-│       ├── machine-data
-│       │   ├── parameters-Cylinder1.tsv
-│       │   ├── parameters-Cylinder2.tsv
-│       │   ├── parameters-Disk1.tsv
-│       │   ├── parameters-Disk2.tsv
-│       │   ├── parameters-Sphere1.tsv
-│       │   ├── parameters-Sphere2.tsv
-│       │   ├── preprocessed-test.tsv
-│       │   └── preprocessed-train.tsv
-│       └── human-data0
-│           ├── calibrated.tsv
-│           ├── parameters-Cylinder1.tsv
-│           ├── parameters-Cylinder2.tsv
-│           ├── parameters-Disk1.tsv
-│           ├── parameters-Disk2.tsv
-│           ├── parameters-Sphere1.tsv
-│           ├── parameters-Sphere2.tsv
-│           ├── preprocessed-test.tsv
-│           └── preprocessed-train.tsv
-</pre>
+There are 5 folds, and each fold has a corresponding directory in the `data` directory. For example, 
+```data/
+├── human-data0/
+│   ├── calibrated.tsv
+│   ├── parameters-Cylinder1.tsv
+│   ├── parameters-Cylinder2.tsv
+│   ├── parameters-Disk1.tsv
+│   ├── parameters-Disk2.tsv
+│   ├── parameters-Sphere1.tsv
+│   ├── parameters-Sphere2.tsv
+│   ├── preprocessed-test.tsv
+│   ├── preprocessed-train.tsv
+├── human-data1/
+│   ├── calibrated.tsv
+│   ├── parameters-Cylinder1.tsv
+│   ├── parameters-Cylinder2.tsv
+│   ├── parameters-Disk1.tsv
+│   ├── parameters-Disk2.tsv
+│   ├── parameters-Sphere1.tsv
+│   ├── parameters-Sphere2.tsv
+│   ├── preprocessed-test.tsv
+│   ├── preprocessed-train.tsv
+```
 
