@@ -1,4 +1,5 @@
 # Description
+This project is a part of the AAAI HCOMP 2024 paper Combining Human and AI Strengths in Object Counting under Information Asymmetry. The specific task is to combine the predictions of humans and AI to improve the accuracy of object counting.
 The project consists of several components, including generating jar images, running the segmentation model on images, performing transformations and predictions for AI, making predictions for humans, and combining the predictions.
 
 # Environment
