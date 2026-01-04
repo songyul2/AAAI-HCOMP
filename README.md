@@ -3,7 +3,13 @@ This repo is for the AAAI HCOMP 2024 paper [Combining Human and AI Strengths in 
 The project consists of several components, including generating jar images, running the segmentation model on images, performing transformations and predictions for AI, making predictions for humans, and combining the predictions.
 
 # Environment
-The code was tested on Linux. To set up the python environment, first install cmdstanpy following https://mc-stan.org/cmdstanpy/installation.html. Conda installation only worked in an empty conda environment. Another possible issue is discussed at https://discourse.mc-stan.org/t/error-installing-cmdstan/19216/3. Then, run the following command to install the rest of the packages:
+The code was tested on Linux.
+You can use docker to set up the environment . The second command maps $(pwd)/app on your computer to the /app folder inside the container. Any files the script saves will appear on your file system.
+```
+docker build -t stan-app .
+docker run --rm -v "$(pwd)/app:/app" stan-app
+```
+Alternatively, to do it yourself, first install cmdstanpy following https://mc-stan.org/cmdstanpy/installation.html. Conda installation only worked in an empty conda environment. Another possible issue is discussed at https://discourse.mc-stan.org/t/error-installing-cmdstan/19216/3. Then, run the following command to install the rest of the packages:
 `pip install -r requirements.txt`
 
 # Major components
